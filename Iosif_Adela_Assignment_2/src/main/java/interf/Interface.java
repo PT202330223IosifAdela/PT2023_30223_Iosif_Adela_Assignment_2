@@ -1,8 +1,9 @@
 package interf;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-public class Interface extends JFrame {
+public class Interface extends JFrame{
     private JPanel Panel;
     private JTextField nrClienti;
     private JTextField nrCozi;
@@ -92,4 +93,6 @@ public class Interface extends JFrame {
         //buton simulare
 
     }
+
+
 }

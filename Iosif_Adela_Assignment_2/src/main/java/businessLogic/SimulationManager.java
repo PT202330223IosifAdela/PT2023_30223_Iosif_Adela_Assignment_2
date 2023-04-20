@@ -22,6 +22,9 @@ public class SimulationManager implements Runnable {
 
     }
 
+    public SimulationManager(Integer nrClienti, Integer nrCozi, Integer timpSimulare, Integer arrivMax, Integer arrivMin, Integer servMax, Integer servMin) {
+    }
+
     public void generateNRandomTasks(){
 
     }

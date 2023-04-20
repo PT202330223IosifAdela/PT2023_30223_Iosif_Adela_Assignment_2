@@ -20,7 +20,7 @@ public class Server implements Runnable {
         }
     }
 
-    public Task[] getTasks() {
+    /*public Task[] getTasks() {
 
-    }
+    }*/
 }

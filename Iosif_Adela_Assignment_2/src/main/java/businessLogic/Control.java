@@ -2,7 +2,7 @@ package businessLogic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import interf.Interface;
-public class Control{
+public class Control implements ActionListener{
     private Interface i;
     private Integer nrClienti;
     private Integer nrCozi;
@@ -12,6 +12,10 @@ public class Control{
     private Integer servMin;
     private Integer servMax;
     private SimulationManager s;
+
+    public Control(Interface i) {
+        this.i = i;
+    }
 
     public Integer getNrClienti() {
         return nrClienti;
@@ -39,5 +43,23 @@ public class Control{
 
     public Integer getServMax() {
         return servMax;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        nrClienti = i.getNrClienti();
+        nrCozi = i.getNrCozi();
+        arrivMax = i.getArrivMax();
+        arrivMin = i.getServiceMin();
+        servMax = i.getArrivMax();
+        servMin = i.getArrivMin();
+        timpSimulare = i.getSimu();
+
+        SimulationManager simulMan = new SimulationManager(nrClienti,
+                nrCozi,timpSimulare,arrivMax,arrivMin,servMax,servMin);
+
+        Thread begin = new Thread(simulMan);
+        begin.start();
+        i.dispose();
     }
 }
