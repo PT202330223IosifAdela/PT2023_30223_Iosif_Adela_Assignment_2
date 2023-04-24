@@ -1,11 +1,10 @@
 package interf;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Interface extends JFrame{
     private JPanel Panel;
-    private JTextField nrClienti;
+    private JTextField nrTasks;
     private JTextField nrCozi;
     private JTextField arrivMax;
     private JTextField arrivMin;
@@ -21,9 +20,9 @@ public class Interface extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public Integer getNrClienti() {
+    public Integer getNrTasks() {
        try{//citirea valorilor pentru simulare
-           return Integer.parseInt(nrClienti.getText());
+           return Integer.parseInt(nrTasks.getText());
        }
        catch(NumberFormatException e){
            JOptionPane.showMessageDialog(Panel, "Dati un text valid!");

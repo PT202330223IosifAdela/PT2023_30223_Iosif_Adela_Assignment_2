@@ -47,7 +47,7 @@ public class Control implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        nrClienti = i.getNrClienti();
+        nrClienti = i.getNrTasks();
         nrCozi = i.getNrCozi();
         arrivMax = i.getArrivMax();
         arrivMin = i.getServiceMin();
