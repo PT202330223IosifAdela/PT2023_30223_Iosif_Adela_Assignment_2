@@ -36,7 +36,7 @@ public class SimulationManager implements Runnable {
     public SimulationManager(Integer nrClienti, Integer nrCozi, Integer timpSimulare, Integer arrivMax, Integer arrivMin, Integer servMax, Integer servMin) {
     }
 
-    public void generateNRandomTasks(){
+    public void generateNRandomTasks() throws InterruptedException {
         int idTask, arrTime, serviceTime;
         Random r = new Random();
         this.generateTasks = new ArrayList<>();
@@ -57,17 +57,33 @@ public class SimulationManager implements Runnable {
         Collections.sort(generateTasks);
 
         for(Task t:generateTasks){
-               scheduler.tasksList(t);
+               scheduler.addTask(coada);
         }
     }
 
     @Override
     public void run() {
-        generateNRandomTasks();
-        /*int currentTime = 0;
+        try {
+            generateNRandomTasks();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        int currentTime = 0;
         while (currentTime < timeLimit) {
             currentTime++;
-        }*/
+            System.out.println("tCurent " + currentTime + "seconds");
+            try {
+                if(coada.take().getArrivalTime() <= currentTime){
+                    try {
+                        scheduler.addTask(coada);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
     public static void main(String[] args) {
         SimulationManager gen = new SimulationManager();
