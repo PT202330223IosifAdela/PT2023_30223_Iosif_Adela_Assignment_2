@@ -2,19 +2,23 @@ package businessLogic;
 
 import model.Task;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.io.FileWriter;
 
 public class SimulationManager implements Runnable {
 
     //date citite de la UI
     public int timeLimit = 60;  //t max simulation
-    public int maxProcessingTime = 10;
-    public int minProcessingTime = 2;
+    //public int maxProcessingTime = 10;
+    //public int minProcessingTime = 2;
     public static int numberOfServers = 2; //nr de cozi
     public int numberOfClients = 4; //nr de clienti
     public int arrivMin = 2;    ///t min arrival
@@ -62,6 +66,13 @@ public class SimulationManager implements Runnable {
 
     @Override
     public void run() {
+        FileWriter f;
+        try {
+             f = new FileWriter("logFile.txt");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         try {
             generateNRandomTasks();
         } catch (InterruptedException e) {
@@ -86,13 +97,17 @@ public class SimulationManager implements Runnable {
             System.out.println("Time: " + currentTime + " sec");
             try {
                 scheduler.printCozi();
+                f.write(scheduler.printCozi());
                 Thread.sleep(1000);
                 currentTime = currentTime + 1;
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
+
     public static void main(String[] args) {
         SimulationManager gen = new SimulationManager(numberOfServers);
         Thread t = new Thread(gen);

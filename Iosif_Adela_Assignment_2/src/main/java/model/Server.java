@@ -20,7 +20,7 @@ public class Server implements Runnable, Comparable<Server> {
         //tasks.put(coada.take());
         Task t = coada.take();
         tasks.put(t);
-        waitingPeriod.addAndGet(t.serviceTime);
+        waitingPeriod.addAndGet(t.serviceTime.get());
     }
 
     public AtomicInteger getWaitingPeriod() {
@@ -34,7 +34,7 @@ public class Server implements Runnable, Comparable<Server> {
             if (t != null){
                 waitingPeriod.getAndDecrement();
                 t.decreaseServiceTime();
-                if(t.getServiceTime() == 0){
+                if(t.getServiceTime().get() == 0){
                     try {
                         tasks.take();
                     } catch (InterruptedException e) {

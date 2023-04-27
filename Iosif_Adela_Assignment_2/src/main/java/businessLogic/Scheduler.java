@@ -29,10 +29,13 @@ public class Scheduler {
     }
 
     //metoda testare afisare
-    public void printCozi() {
+    public String printCozi() {
+        String st = "";
         for (Server s : servers) {
-            System.out.println("Queue " + servers.indexOf(s) + " " + s);
+            st += "Queue " + servers.indexOf(s) + " " + s;
+          //  System.out.println("Queue " + servers.indexOf(s) + " " + s);
         }
+        return st;
     }
 
     public void addTask(BlockingQueue<Task> coada) throws InterruptedException {
