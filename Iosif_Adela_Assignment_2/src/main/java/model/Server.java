@@ -1,7 +1,5 @@
 package model;
 
-import java.awt.datatransfer.Clipboard;
-import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -60,5 +58,8 @@ public class Server implements Runnable, Comparable<Server> {
             }
             return clienti + "\n";
         }
+    }
+    public boolean isEmpty(){
+        return tasks.isEmpty();
     }
 }

@@ -2,8 +2,8 @@ package model;
 
 public class Task implements Comparable<Task>{
     private int id;
-    private int arrivalTime;
-    int serviceTime;
+    private Integer arrivalTime;
+    Integer serviceTime;
 
     public Task(int idTask, int arrTime, int serviceTime) {
         this.id = idTask;
@@ -36,8 +36,15 @@ public class Task implements Comparable<Task>{
     }
 
     @Override
-    public int compareTo(Task o) {
-        return 0;
+    public int compareTo(Task t) {//sortare clienti dupa waitingPeriod
+        //se ordoneaza dupa timpul de venire
+        //daca timpii sunt egali, se uita la timpii de servire
+       if(this.arrivalTime.equals(t.arrivalTime)){
+           return this.serviceTime.compareTo(t.serviceTime);
+       }
+       else{
+           return this.arrivalTime.compareTo(t.arrivalTime);
+       }
     }
 
     @Override

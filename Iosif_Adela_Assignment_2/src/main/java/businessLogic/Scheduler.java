@@ -38,27 +38,19 @@ public class Scheduler {
     public void addTask(BlockingQueue<Task> coada) throws InterruptedException {
         //adaugare task in coada
         //incrementare waitingPeriod
+        //sortare cozi
         List<Server> serv = new ArrayList<>();
         serv.addAll(servers);
         Collections.sort(serv);
         serv.get(0).addTask(coada);
     }
-
-    /*public void startServers(){
-
-    }*//*public void startServers(){
-
-    }*/
-
-  /*  public void tasksList(Task task){
-        strategy.addTask(servers, task);
-    }*/
-
-
-    /*public void changeStrategy(SelectionPolicy policy)
-    {
-        if(policy == SelectionPolicy.SHORTEST_QUEUE){
-
+    public boolean eGoala() {//daca toate cozile sunt goale, returneaza 1
+        for(Server s: servers) {
+            if(!s.isEmpty()) {
+                return false;
+            }
         }
-    }*/
+        return true;
+    }
+
 }
