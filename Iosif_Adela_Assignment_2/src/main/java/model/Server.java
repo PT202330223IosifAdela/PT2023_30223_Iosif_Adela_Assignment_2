@@ -17,11 +17,19 @@ public class Server implements Runnable, Comparable<Server> {
         this.tasks = new LinkedBlockingDeque<>();
         this.waitingPeriod = new AtomicInteger(0);
     }
-    public void addTask(BlockingQueue<Task> coada) throws InterruptedException {
+   /* public void addTask(BlockingQueue<Task> coada) throws InterruptedException {
        //tasks.put(coada.take());
         Task t = coada.take();
         tasks.put(t);
         waitingPeriod.addAndGet(t.serviceTime);
+    }*/
+   public void addTask(Task t) {
+       tasks.add(t);    //adaugare task in coada
+       waitingPeriod.addAndGet(t.getServiceTime());
+   }
+
+    public AtomicInteger getWaitingPeriod() {
+        return waitingPeriod;
     }
 
     @Override
@@ -36,7 +44,8 @@ public class Server implements Runnable, Comparable<Server> {
         return 0;
     }
 
-    /*public Task[] getTasks() {
+    public BlockingQueue<Task> getTasks() {
+        return tasks;
+    }
 
-    }*/
 }

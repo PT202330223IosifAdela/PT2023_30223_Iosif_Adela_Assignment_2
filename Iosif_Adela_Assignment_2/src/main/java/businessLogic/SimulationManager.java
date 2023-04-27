@@ -57,12 +57,7 @@ public class SimulationManager implements Runnable {
         Collections.sort(generateTasks);
 
         for(Task t:generateTasks){
-            try{
-               scheduler.addTask(coada);
-            }
-           catch (InterruptedException e){
-                System.out.println("Exceptie");
-           }
+               scheduler.tasksList(t);
         }
     }
 
