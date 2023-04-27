@@ -22,10 +22,6 @@ public class Server implements Runnable, Comparable<Server> {
         tasks.put(t);
         waitingPeriod.addAndGet(t.serviceTime);
     }
-/*   public void addTask(Task t) {
-       tasks.add(t);    //adaugare task in coada
-       waitingPeriod.addAndGet(t.getServiceTime());
-   }*/
 
     public AtomicInteger getWaitingPeriod() {
         return waitingPeriod;
@@ -33,18 +29,36 @@ public class Server implements Runnable, Comparable<Server> {
 
     @Override
     public void run() {
-        while (true) {
-
+        while (true) {//scad waitingPeriod si serviceTime la primul client
+            Task t = tasks.peek();
+            if (t != null){
+                waitingPeriod.getAndDecrement();
+                t.setServiceTime(t.getServiceTime() - 1);
+                if(t.getServiceTime() == 0){
+                    try {
+                        tasks.take();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 
     @Override
-    public int compareTo(Server o) {
-        return 0;
+    public int compareTo(Server s) {
+        Integer w1 = waitingPeriod.get();
+        Integer w2 = s.waitingPeriod.get();
+        return w1.compareTo(w2);
     }
 
     public BlockingQueue<Task> getTasks() {
-        return tasks;
+        return this.tasks;
     }
 
     @Override

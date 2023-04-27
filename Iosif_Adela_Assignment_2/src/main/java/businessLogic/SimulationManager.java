@@ -84,20 +84,17 @@ public class SimulationManager implements Runnable {
         while (currentTime < timeLimit && !scheduler.eGoala()){
             System.out.println("Time: " + currentTime + " sec");
             try {
-                Thread.sleep(1000);
                 scheduler.printCozi();
+                Thread.sleep(1000);
                 currentTime = currentTime + 1;
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
-
     }
     public static void main(String[] args) {
         SimulationManager gen = new SimulationManager(numberOfServers);
         Thread t = new Thread(gen);
         t.start();
-
-
     }
 }
