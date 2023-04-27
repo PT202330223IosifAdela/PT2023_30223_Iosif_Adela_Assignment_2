@@ -12,18 +12,16 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class SimulationManager implements Runnable {
 
     //date citite de la UI
-    public int timeLimit = 5;
+    public int timeLimit = 60;  //t max simulation
     public int maxProcessingTime = 10;
     public int minProcessingTime = 2;
-    public int numberOfServers = 3;
-    public int numberOfClients = 100;
-    //public SelectionPolicy selectionPolicy = SelectionPolicy.SHORTEST_TIME;
+    public static int numberOfServers = 2; //nr de cozi
+    public int numberOfClients = 4; //nr de clienti
+    public int arrivMin = 2;    ///t min arrival
+    public int arrivMax = 30;   ///t max arrival
 
-    public int arrivMin = 10;
-    public int arrivMax = 100;
-
-    public int serviceMin = 5;
-    public int serviceMax = 50;
+    public int serviceMin = 2;  //t min service
+    public int serviceMax = 4; //t max service
     private static Scheduler scheduler;
     //private SimulationFrame frame;
     private List<Task> generateTasks;
@@ -49,11 +47,11 @@ public class SimulationManager implements Runnable {
             serviceTime = r.nextInt(serviceMin, serviceMax + 1);
 
             generateTasks.add(new Task(idTask, arrTime, serviceTime));
-
+/*
             System.out.println(idTask);
             System.out.println(arrTime);
             System.out.println(serviceTime);
-            System.out.println("\n");
+            System.out.println("\n");*/
         }
         Collections.sort(generateTasks);
         for (Task t : generateTasks) {
@@ -72,7 +70,7 @@ public class SimulationManager implements Runnable {
         int currentTime = 0;
         while (currentTime < timeLimit && !coada.isEmpty()) {
             currentTime++;
-            System.out.println("tCurent " + currentTime + "seconds");
+            System.out.println("Time " + currentTime);
             if (coada.peek().getArrivalTime() <= currentTime) {
                 try {
                     scheduler.addTask(coada);
@@ -84,11 +82,11 @@ public class SimulationManager implements Runnable {
             }
         }
     }
-
     public static void main(String[] args) {
-        SimulationManager gen = new SimulationManager(4);
+        SimulationManager gen = new SimulationManager(numberOfServers);
         Thread t = new Thread(gen);
         t.start();
+
 
     }
 }

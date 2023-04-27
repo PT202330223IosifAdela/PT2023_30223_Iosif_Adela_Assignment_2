@@ -31,7 +31,7 @@ public class Scheduler {
     //metoda testare afisare
     public void printCozi() {
         for (Server s : servers) {
-            System.out.println("Coada nr " + servers.indexOf(s) + " " + s);
+            System.out.println("Queue " + servers.indexOf(s) + " " + s);
         }
     }
 

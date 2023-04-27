@@ -51,9 +51,9 @@ public class Server implements Runnable, Comparable<Server> {
 
     @Override
     public String toString() {
-        StringBuilder clienti = new StringBuilder("coada");
+        StringBuilder clienti = new StringBuilder("Queue");
         if (tasks.isEmpty()) { //coada e goala
-            return "Coada e goala\n";
+            return clienti + " closed\n";
         } else {
             for (Task t : tasks) {
                 clienti.append(t.toString()).append(" ");

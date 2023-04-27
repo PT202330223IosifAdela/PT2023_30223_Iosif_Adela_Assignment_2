@@ -39,4 +39,9 @@ public class Task implements Comparable<Task>{
     public int compareTo(Task o) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+      return "(" + id +"," + arrivalTime + "," + serviceTime + ")";
+    }
 }
