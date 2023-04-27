@@ -30,10 +30,18 @@ public class SimulationManager implements Runnable {
     //private SimulationFrame frame;
     private List<Task> generateTasks;
     private BlockingQueue<Task> coada;
+    FileWriter f;
 
-    public SimulationManager(Integer nrCozi) {
+    public SimulationManager(Integer nrCozi) throws IOException {
         coada = new LinkedBlockingQueue<Task>();
         scheduler = new Scheduler(nrCozi);
+
+        try {
+            f = new FileWriter("logFile.txt");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        f.write(coada.toString());
     }
 
     public SimulationManager(Integer nrClienti, Integer nrCozi, Integer timpSimulare, Integer arrivMax, Integer arrivMin, Integer servMax, Integer servMin) {
@@ -51,11 +59,6 @@ public class SimulationManager implements Runnable {
             serviceTime = r.nextInt(serviceMin, serviceMax + 1);
 
             generateTasks.add(new Task(idTask, arrTime, serviceTime));
-/*
-            System.out.println(idTask);
-            System.out.println(arrTime);
-            System.out.println(serviceTime);
-            System.out.println("\n");*/
         }
         Collections.sort(generateTasks);
         for (Task t : generateTasks) {
@@ -66,9 +69,8 @@ public class SimulationManager implements Runnable {
 
     @Override
     public void run() {
-        FileWriter f;
         try {
-             f = new FileWriter("logFile.txt");
+            f = new FileWriter("logFile.txt");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -78,25 +80,42 @@ public class SimulationManager implements Runnable {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
         int currentTime = 0;
         while (currentTime < timeLimit && !coada.isEmpty()) {
+            //System.out.println("Time " + currentTime);
             currentTime++;
-            System.out.println("Time " + currentTime);
             scheduler.printCozi();
+            try {
+                f.write("\nTime: " + currentTime + " sec\n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                f.write(scheduler.printCozi());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             if (coada.peek().getArrivalTime() <= currentTime) {
                 try {
                     scheduler.addTask(coada);
                     //scheduler.printCozi();
+                    //f.write(scheduler.printCozi());
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             }
         }
-        while (currentTime < timeLimit && !scheduler.eGoala()){
-            System.out.println("Time: " + currentTime + " sec");
+        while (currentTime < timeLimit && !scheduler.eGoala()) {
+            //System.out.println("Time: " + currentTime + " sec");
             try {
-                scheduler.printCozi();
+                f.write("\nTime: " + currentTime + " sec\n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                // scheduler.printCozi();
                 f.write(scheduler.printCozi());
                 Thread.sleep(1000);
                 currentTime = currentTime + 1;
@@ -106,9 +125,14 @@ public class SimulationManager implements Runnable {
                 throw new RuntimeException(e);
             }
         }
+        try {
+            f.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SimulationManager gen = new SimulationManager(numberOfServers);
         Thread t = new Thread(gen);
         t.start();

@@ -51,7 +51,7 @@ public class Task implements Comparable<Task>{
 
     @Override
     public String toString() {
-      return "(" + id +"," + arrivalTime + "," + serviceTime + ")";
+      return "(" + id +"," + arrivalTime + "," + serviceTime + ")\n";
     }
     public void decreaseServiceTime(){
         serviceTime.getAndDecrement();

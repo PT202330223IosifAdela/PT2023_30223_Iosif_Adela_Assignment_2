@@ -1,0 +1,91 @@
+
+Time: 1 sec
+Queue 0 Queue closedQueue 1 Queue closed
+Time: 2 sec
+Queue 0 Queue closedQueue 1 Queue closed
+Time: 3 sec
+Queue 0 Queue closedQueue 1 Queue closed
+Time: 4 sec
+Queue 0 Queue closedQueue 1 Queue closed
+Time: 5 sec
+Queue 0 Queue closedQueue 1 Queue closed
+Time: 6 sec
+Queue 0 Queue closedQueue 1 Queue closed
+Time: 7 sec
+Queue 0 Queue closedQueue 1 Queue closed
+Time: 8 sec
+Queue 0 Queue closedQueue 1 Queue closed
+Time: 9 sec
+Queue 0 Queue(4,8,2)
+ Queue 1 Queue closed
+Time: 10 sec
+Queue 0 Queue(4,8,2)
+ Queue 1 Queue closed
+Time: 11 sec
+Queue 0 Queue(4,8,2)
+ Queue 1 Queue closed
+Time: 12 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 13 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 14 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 15 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 16 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 17 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 18 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 19 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 20 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 21 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 22 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 23 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 24 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 25 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 26 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 27 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 28 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 29 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 30 sec
+Queue 0 Queue(4,8,1)
+ Queue 1 Queue closed
+Time: 30 sec
+Queue 0 Queue closedQueue 1 Queue(1,30,2)
+ 
+Time: 31 sec
+Queue 0 Queue closedQueue 1 Queue(1,30,1)
+ 
+Time: 32 sec
+Queue 0 Queue closedQueue 1 Queue closed
