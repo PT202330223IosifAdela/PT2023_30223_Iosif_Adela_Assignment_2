@@ -19,11 +19,11 @@ public class SimulationManager implements Runnable {
     public int numberOfClients = 100;
     //public SelectionPolicy selectionPolicy = SelectionPolicy.SHORTEST_TIME;
 
-    public int arrivMin;
-    public int arrivMax;
+    public int arrivMin=10;
+    public int arrivMax=100;
 
-    public int serviceMin;
-    public int serviceMax;
+    public int serviceMin=5;
+    public int serviceMax=50;
     private Scheduler scheduler;
     //private SimulationFrame frame;
     private List<Task> generateTasks;
