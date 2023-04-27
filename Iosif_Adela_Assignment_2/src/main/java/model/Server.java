@@ -17,8 +17,9 @@ public class Server implements Runnable, Comparable<Server> {
         this.tasks = new LinkedBlockingDeque<>();
         this.waitingPeriod = new AtomicInteger(0);
     }
-   public void addTask(BlockingQueue<Task> coada) throws InterruptedException {
-       //tasks.put(coada.take());
+
+    public void addTask(BlockingQueue<Task> coada) throws InterruptedException {
+        //tasks.put(coada.take());
         Task t = coada.take();
         tasks.put(t);
         waitingPeriod.addAndGet(t.serviceTime);
@@ -51,12 +52,11 @@ public class Server implements Runnable, Comparable<Server> {
     @Override
     public String toString() {
         StringBuilder clienti = new StringBuilder("coada");
-        if(tasks.isEmpty()){ //coada e goala
+        if (tasks.isEmpty()) { //coada e goala
             return "Coada e goala\n";
-        }
-        else{
-            for(Task t: tasks){
-                 clienti.append(t.toString()).append(" ");
+        } else {
+            for (Task t : tasks) {
+                clienti.append(t.toString()).append(" ");
             }
             return clienti + "\n";
         }

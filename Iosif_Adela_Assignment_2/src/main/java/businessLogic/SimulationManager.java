@@ -12,25 +12,26 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class SimulationManager implements Runnable {
 
     //date citite de la UI
-    public int timeLimit = 100;
+    public int timeLimit = 5;
     public int maxProcessingTime = 10;
     public int minProcessingTime = 2;
     public int numberOfServers = 3;
     public int numberOfClients = 100;
     //public SelectionPolicy selectionPolicy = SelectionPolicy.SHORTEST_TIME;
 
-    public int arrivMin=10;
-    public int arrivMax=100;
+    public int arrivMin = 10;
+    public int arrivMax = 100;
 
-    public int serviceMin=5;
-    public int serviceMax=50;
+    public int serviceMin = 5;
+    public int serviceMax = 50;
     private static Scheduler scheduler;
     //private SimulationFrame frame;
     private List<Task> generateTasks;
     private BlockingQueue<Task> coada;
 
-    public SimulationManager() {
-
+    public SimulationManager(Integer nrCozi) {
+        coada = new LinkedBlockingQueue<Task>();
+        scheduler = new Scheduler(nrCozi);
     }
 
     public SimulationManager(Integer nrClienti, Integer nrCozi, Integer timpSimulare, Integer arrivMax, Integer arrivMin, Integer servMax, Integer servMin) {
@@ -42,12 +43,12 @@ public class SimulationManager implements Runnable {
         this.generateTasks = new ArrayList<>();
         this.coada = new LinkedBlockingQueue<>();
 
-        for(int i = 0; i < numberOfClients; i++){
-            idTask = r.nextInt(1, numberOfClients+1);
-            arrTime = r.nextInt(arrivMin, arrivMax+1);
-            serviceTime = r.nextInt(serviceMin,serviceMax+1);
+        for (int i = 0; i < numberOfClients; i++) {
+            idTask = r.nextInt(1, numberOfClients + 1);
+            arrTime = r.nextInt(arrivMin, arrivMax + 1);
+            serviceTime = r.nextInt(serviceMin, serviceMax + 1);
 
-            generateTasks.add(new Task(idTask,arrTime,serviceTime));
+            generateTasks.add(new Task(idTask, arrTime, serviceTime));
 
             System.out.println(idTask);
             System.out.println(arrTime);
@@ -55,9 +56,9 @@ public class SimulationManager implements Runnable {
             System.out.println("\n");
         }
         Collections.sort(generateTasks);
-
-        for(Task t:generateTasks){
-               scheduler.addTask(coada);
+        for (Task t : generateTasks) {
+            //  scheduler.addTask(coada);//t
+            coada.add(t);
         }
     }
 
@@ -69,10 +70,10 @@ public class SimulationManager implements Runnable {
             throw new RuntimeException(e);
         }
         int currentTime = 0;
-        while (currentTime < timeLimit) {
+        while (currentTime < timeLimit && !coada.isEmpty()) {
             currentTime++;
             System.out.println("tCurent " + currentTime + "seconds");
-            if(coada.peek().getArrivalTime() <= currentTime){
+            if (coada.peek().getArrivalTime() <= currentTime) {
                 try {
                     scheduler.addTask(coada);
                     scheduler.printCozi();
@@ -83,9 +84,10 @@ public class SimulationManager implements Runnable {
             }
         }
     }
+
     public static void main(String[] args) {
-        SimulationManager gen = new SimulationManager();
-        Thread t =new Thread(gen);
+        SimulationManager gen = new SimulationManager(4);
+        Thread t = new Thread(gen);
         t.start();
 
     }
