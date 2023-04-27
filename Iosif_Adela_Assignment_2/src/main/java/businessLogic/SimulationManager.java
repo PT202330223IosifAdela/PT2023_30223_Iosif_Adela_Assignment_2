@@ -24,7 +24,7 @@ public class SimulationManager implements Runnable {
 
     public int serviceMin=5;
     public int serviceMax=50;
-    private Scheduler scheduler;
+    private static Scheduler scheduler;
     //private SimulationFrame frame;
     private List<Task> generateTasks;
     private BlockingQueue<Task> coada;
@@ -72,16 +72,14 @@ public class SimulationManager implements Runnable {
         while (currentTime < timeLimit) {
             currentTime++;
             System.out.println("tCurent " + currentTime + "seconds");
-            try {
-                if(coada.take().getArrivalTime() <= currentTime){
-                    try {
-                        scheduler.addTask(coada);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+            if(coada.peek().getArrivalTime() <= currentTime){
+                try {
+                    scheduler.addTask(coada);
+                    scheduler.printCozi();
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
                 }
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
             }
         }
     }

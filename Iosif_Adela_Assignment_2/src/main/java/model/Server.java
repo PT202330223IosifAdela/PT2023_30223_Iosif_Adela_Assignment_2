@@ -12,7 +12,7 @@ public class Server implements Runnable, Comparable<Server> {
     private AtomicInteger waitingPeriod;
     private AtomicInteger averageWaiting;
 
-    public Server(Integer cap) {
+    public Server() {
         //initializare coada si waitingPeriod
         this.tasks = new LinkedBlockingDeque<>();
         this.waitingPeriod = new AtomicInteger(0);
@@ -48,4 +48,17 @@ public class Server implements Runnable, Comparable<Server> {
         return tasks;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder clienti = new StringBuilder("coada");
+        if(tasks.isEmpty()){ //coada e goala
+            return "Coada e goala\n";
+        }
+        else{
+            for(Task t: tasks){
+                 clienti.append(t.toString()).append(" ");
+            }
+            return clienti + "\n";
+        }
+    }
 }
