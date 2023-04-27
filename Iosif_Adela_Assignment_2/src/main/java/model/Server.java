@@ -33,7 +33,7 @@ public class Server implements Runnable, Comparable<Server> {
             Task t = tasks.peek();
             if (t != null){
                 waitingPeriod.getAndDecrement();
-                t.setServiceTime(t.getServiceTime() - 1);
+                t.decreaseServiceTime();
                 if(t.getServiceTime() == 0){
                     try {
                         tasks.take();
@@ -56,21 +56,19 @@ public class Server implements Runnable, Comparable<Server> {
         Integer w2 = s.waitingPeriod.get();
         return w1.compareTo(w2);
     }
-
     public BlockingQueue<Task> getTasks() {
         return this.tasks;
     }
-
     @Override
     public String toString() {
         StringBuilder clienti = new StringBuilder("Queue");
         if (tasks.isEmpty()) { //coada e goala
-            return clienti + " closed\n";
+            return clienti + " closed";
         } else {
             for (Task t : tasks) {
                 clienti.append(t.toString()).append(" ");
             }
-            return clienti + "\n";
+            return clienti + "";
         }
     }
     public boolean isEmpty(){

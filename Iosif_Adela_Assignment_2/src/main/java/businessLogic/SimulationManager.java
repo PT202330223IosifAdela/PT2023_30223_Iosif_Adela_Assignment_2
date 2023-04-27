@@ -71,10 +71,11 @@ public class SimulationManager implements Runnable {
         while (currentTime < timeLimit && !coada.isEmpty()) {
             currentTime++;
             System.out.println("Time " + currentTime);
+            scheduler.printCozi();
             if (coada.peek().getArrivalTime() <= currentTime) {
                 try {
                     scheduler.addTask(coada);
-                    scheduler.printCozi();
+                    //scheduler.printCozi();
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
@@ -96,5 +97,7 @@ public class SimulationManager implements Runnable {
         SimulationManager gen = new SimulationManager(numberOfServers);
         Thread t = new Thread(gen);
         t.start();
+        //nu se mai afiseaza cand scheduler.eGoala devine true
+        //cand ajung toate cozile goale nu se mai afiseaza cu close; se indeplineste cond si nu mai intra la afisare
     }
 }
