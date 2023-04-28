@@ -14,8 +14,8 @@ public class TimeStrategy implements Strategy {
         //cauta coada cu cel mai scurt timp de asteptare si adauga acolo task
 
         int minTime = 9000, iMin = 0, j = 0;
-        for(Server s: servers){
-            if(s.getWaitingPeriod().intValue() < minTime){
+        for (Server s : servers) {
+            if (s.getWaitingPeriod().intValue() < minTime) {
                 iMin = j;
             }
             j = j + 1;

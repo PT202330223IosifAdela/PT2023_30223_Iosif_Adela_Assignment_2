@@ -2,7 +2,7 @@ package model;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Task implements Comparable<Task>{
+public class Task implements Comparable<Task> {
     private int id;
     private Integer arrivalTime;
     AtomicInteger serviceTime;
@@ -34,26 +34,25 @@ public class Task implements Comparable<Task>{
     }
 
 
-
     @Override
     public int compareTo(Task t) {//sortare clienti dupa waitingPeriod
         //se ordoneaza dupa timpul de venire
         //daca timpii sunt egali, se uita la timpii de servire
-       if(this.arrivalTime.equals(t.arrivalTime)){
-           Integer stime = serviceTime.get();
-           Integer aux = t.serviceTime.get();
-           return stime.compareTo(aux);
-       }
-       else{
-           return this.arrivalTime.compareTo(t.arrivalTime);
-       }
+        if (this.arrivalTime.equals(t.arrivalTime)) {
+            Integer stime = serviceTime.get();
+            Integer aux = t.serviceTime.get();
+            return stime.compareTo(aux);
+        } else {
+            return this.arrivalTime.compareTo(t.arrivalTime);
+        }
     }
 
     @Override
     public String toString() {
-      return "(" + id +"," + arrivalTime + "," + serviceTime + ")\n";
+        return "(" + id + "," + arrivalTime + "," + serviceTime + ")\n";
     }
-    public void decreaseServiceTime(){
+
+    public void decreaseServiceTime() {
         serviceTime.getAndDecrement();
     }
 }

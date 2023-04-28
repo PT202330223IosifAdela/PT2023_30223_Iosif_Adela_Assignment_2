@@ -31,10 +31,10 @@ public class Server implements Runnable, Comparable<Server> {
     public void run() {
         while (true) {//scad waitingPeriod si serviceTime la primul client
             Task t = tasks.peek();
-            if (t != null){
+            if (t != null) {
                 waitingPeriod.getAndDecrement();
                 t.decreaseServiceTime();
-                if(t.getServiceTime().get() == 0){
+                if (t.getServiceTime().get() == 0) {
                     try {
                         tasks.take();
                     } catch (InterruptedException e) {
@@ -56,9 +56,11 @@ public class Server implements Runnable, Comparable<Server> {
         Integer w2 = s.waitingPeriod.get();
         return w1.compareTo(w2);
     }
+
     public BlockingQueue<Task> getTasks() {
         return this.tasks;
     }
+
     @Override
     public String toString() {
         StringBuilder clienti = new StringBuilder("Queue");
@@ -71,7 +73,8 @@ public class Server implements Runnable, Comparable<Server> {
             return clienti + "";
         }
     }
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return tasks.isEmpty();
     }
 }

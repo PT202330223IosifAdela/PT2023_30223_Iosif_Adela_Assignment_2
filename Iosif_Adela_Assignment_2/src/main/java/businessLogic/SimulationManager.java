@@ -23,7 +23,6 @@ public class SimulationManager implements Runnable {
     public int serviceMin = 1;  //t min service: 2 1 3
     public int serviceMax = 7; //t max service: 4 7 9
     private static Scheduler scheduler;
-    //private SimulationFrame frame;
     private List<Task> generateTasks;
     private BlockingQueue<Task> coada;
     FileWriter f;
@@ -39,6 +38,7 @@ public class SimulationManager implements Runnable {
         }
         f.write(coada.toString());
     }
+
     public void generateNRandomTasks() throws InterruptedException {
         //generarea aleatoare a task-urilor
         int idTask, arrTime, serviceTime;
