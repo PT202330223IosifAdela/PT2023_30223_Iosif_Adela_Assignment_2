@@ -80,16 +80,20 @@ public class SimulationManager implements Runnable {
             currentTime++;
             scheduler.printCozi();
             //afisare waiting clients
-            try {
-                f.write("\nWaiting clients: " + coada.toString());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+
             try {
                 f.write("\nTime: " + currentTime + " sec\n");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+            try {
+                f.write("\nWaiting clients: " + coada.toString());
+                f.write("\n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
             try {
                 f.write(scheduler.printCozi());
             } catch (IOException e) {
@@ -108,17 +112,20 @@ public class SimulationManager implements Runnable {
         }
         while (currentTime < timeLimit && !scheduler.eGoala()) {
             //System.out.println("Time: " + currentTime + " sec");
-            try {
-                f.write("\nWaiting clients: " + coada.toString());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
 
             try {
                 f.write("\nTime: " + currentTime + " sec\n");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+            try {
+                f.write("\nWaiting clients: " + coada.toString());
+                f.write("\n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
             try {
                 // scheduler.printCozi();
                 f.write(scheduler.printCozi());

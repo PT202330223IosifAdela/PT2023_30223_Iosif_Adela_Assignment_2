@@ -11,10 +11,6 @@ import java.util.concurrent.BlockingQueue;
 public class Scheduler {
     private List<Server> servers;
     private List<Thread> threads;
-    final int maxNoServers = 10;
-    final int maxTasksPerServer = 10;
-    private Strategy strategy;
-    private int nrServ;
 
     public Scheduler(int nrServ) {//nr de cozi de la Simulation Manager
         //se construiesc serverele si se creeaza cate un thread pt fiecare
