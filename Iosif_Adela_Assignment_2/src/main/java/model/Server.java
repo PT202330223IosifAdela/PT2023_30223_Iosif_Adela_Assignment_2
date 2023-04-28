@@ -29,7 +29,7 @@ public class Server implements Runnable, Comparable<Server> {
 
     @Override
     public void run() {
-        while (true) {//scad waitingPeriod si serviceTime la primul client
+        while (true) {//scad waitingPeriod si serviceTime la fiecare client
             Task t = tasks.peek();
             if (t != null) {
                 waitingPeriod.getAndDecrement();
