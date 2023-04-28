@@ -49,7 +49,7 @@ public class Task implements Comparable<Task> {
 
     @Override
     public String toString() {
-        return "(" + id + "," + arrivalTime + "," + serviceTime + ")\n";
+        return "(" + id + "," + arrivalTime + "," + serviceTime + ")";
     }
 
     public void decreaseServiceTime() {
