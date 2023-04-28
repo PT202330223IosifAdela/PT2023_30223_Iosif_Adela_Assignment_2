@@ -68,7 +68,7 @@ public class Server implements Runnable, Comparable<Server> {
             return clienti + " closed\n";
         } else {
             for (Task t : tasks) {
-                clienti.append(t.toString()).append(" ");
+                clienti.append(t.toString()).append("\n");
             }
             return clienti + "";
         }
