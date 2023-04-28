@@ -14,18 +14,14 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.io.FileWriter;
 
 public class SimulationManager implements Runnable {
+    public int timeLimit = 60;  //t max simulation: 60 60 200
+    public static int numberOfServers = 5; //nr de cozi: 2 5 20
+    public int numberOfClients = 50; //nr de clienti: 4 50 1000
+    public int arrivMin = 2;    ///t min arrival:2 2 10
+    public int arrivMax = 40;   ///t max arrival: 30 40 100
 
-    //date citite de la UI
-    public int timeLimit = 60;  //t max simulation
-    //public int maxProcessingTime = 10;
-    //public int minProcessingTime = 2;
-    public static int numberOfServers = 2; //nr de cozi
-    public int numberOfClients = 4; //nr de clienti
-    public int arrivMin = 2;    ///t min arrival
-    public int arrivMax = 30;   ///t max arrival
-
-    public int serviceMin = 2;  //t min service
-    public int serviceMax = 4; //t max service
+    public int serviceMin = 1;  //t min service: 2 1 3
+    public int serviceMax = 7; //t max service: 4 7 9
     private static Scheduler scheduler;
     //private SimulationFrame frame;
     private List<Task> generateTasks;
@@ -43,11 +39,8 @@ public class SimulationManager implements Runnable {
         }
         f.write(coada.toString());
     }
-
-    public SimulationManager(Integer nrClienti, Integer nrCozi, Integer timpSimulare, Integer arrivMax, Integer arrivMin, Integer servMax, Integer servMin) {
-    }
-
     public void generateNRandomTasks() throws InterruptedException {
+        //generarea aleatoare a task-urilor
         int idTask, arrTime, serviceTime;
         Random r = new Random();
         this.generateTasks = new ArrayList<>();

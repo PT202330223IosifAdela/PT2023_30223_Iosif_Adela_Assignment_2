@@ -17,6 +17,7 @@ public class Scheduler {
     private int nrServ;
 
     public Scheduler(int nrServ) {//nr de cozi de la Simulation Manager
+        //se construiesc serverele si se creeaza cate un thread pt fiecare
         servers = new ArrayList<>();
         threads = new ArrayList<>();
         for (int i = 0; i < nrServ; i++) {//creem obiectele server(cozile) si le pornim
@@ -33,7 +34,7 @@ public class Scheduler {
         String st = "";
         for (Server s : servers) {
             st += " Queue " + servers.indexOf(s) + " " + s;
-          //  System.out.println("Queue " + servers.indexOf(s) + " " + s);
+            //  System.out.println("Queue " + servers.indexOf(s) + " " + s);
         }
         return st;
     }
@@ -47,13 +48,13 @@ public class Scheduler {
         Collections.sort(serv);
         serv.get(0).addTask(coada);
     }
-    public boolean eGoala() {//daca toate cozile sunt goale, returneaza 1
-        for(Server s: servers) {
-            if(!s.isEmpty()) {
+
+    public boolean eGoala() {//daca toate cozile sunt goale, returneaza adevar
+        for (Server s : servers) {
+            if (!s.isEmpty()) {
                 return false;
             }
         }
         return true;
     }
-
 }
