@@ -1,0 +1,334 @@
+
+Time: 1 sec
+ Queue 0 Queue closed
+ Queue 1 Queue closed
+ Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 2 sec
+ Queue 0 Queue closed
+ Queue 1 Queue closed
+ Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 3 sec
+ Queue 0 Queue closed
+ Queue 1 Queue closed
+ Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 4 sec
+ Queue 0 Queue(6,3,4)
+  Queue 1 Queue closed
+ Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 5 sec
+ Queue 0 Queue(6,3,3)
+  Queue 1 Queue(26,3,5)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 6 sec
+ Queue 0 Queue(6,3,2)
+  Queue 1 Queue(26,3,4)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 7 sec
+ Queue 0 Queue(6,3,2)
+  Queue 1 Queue(26,3,4)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 8 sec
+ Queue 0 Queue(6,3,1)
+  Queue 1 Queue(26,3,3)
+  Queue 2 Queue(50,7,1)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 9 sec
+ Queue 0 Queue closed
+ Queue 1 Queue(26,3,2)
+  Queue 2 Queue closed
+ Queue 3 Queue(39,7,3)
+  Queue 4 Queue closed
+
+Time: 10 sec
+ Queue 0 Queue(5,7,5)
+  Queue 1 Queue(26,3,1)
+  Queue 2 Queue closed
+ Queue 3 Queue(39,7,2)
+  Queue 4 Queue closed
+
+Time: 11 sec
+ Queue 0 Queue(5,7,4)
+  Queue 1 Queue closed
+ Queue 2 Queue(12,7,5)
+  Queue 3 Queue(39,7,1)
+  Queue 4 Queue closed
+
+Time: 12 sec
+ Queue 0 Queue(5,7,3)
+  Queue 1 Queue(30,8,1)
+  Queue 2 Queue(12,7,4)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 13 sec
+ Queue 0 Queue(5,7,2)
+  Queue 1 Queue closed
+ Queue 2 Queue(12,7,3)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 14 sec
+ Queue 0 Queue(5,7,1)
+  Queue 1 Queue(2,9,3)
+  Queue 2 Queue(12,7,2)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 15 sec
+ Queue 0 Queue closed
+ Queue 1 Queue(2,9,2)
+  Queue 2 Queue(12,7,1)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 16 sec
+ Queue 0 Queue(38,10,1)
+  Queue 1 Queue(2,9,1)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 17 sec
+ Queue 0 Queue closed
+ Queue 1 Queue closed
+ Queue 2 Queue(47,11,3)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 18 sec
+ Queue 0 Queue closed
+ Queue 1 Queue closed
+ Queue 2 Queue(47,11,2)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 19 sec
+ Queue 0 Queue(3,12,4)
+  Queue 1 Queue closed
+ Queue 2 Queue(47,11,1)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 20 sec
+ Queue 0 Queue(3,12,3)
+  Queue 1 Queue(3,13,1)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 21 sec
+ Queue 0 Queue(3,12,2)
+  Queue 1 Queue closed
+ Queue 2 Queue(36,15,3)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 22 sec
+ Queue 0 Queue(3,12,1)
+  Queue 1 Queue(48,16,1)
+  Queue 2 Queue(36,15,2)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 23 sec
+ Queue 0 Queue closed
+ Queue 1 Queue closed
+ Queue 2 Queue(36,15,1)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 24 sec
+ Queue 0 Queue closed
+ Queue 1 Queue closed
+ Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 25 sec
+ Queue 0 Queue(5,19,2)
+  Queue 1 Queue closed
+ Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 26 sec
+ Queue 0 Queue(5,19,1)
+  Queue 1 Queue(13,19,4)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 27 sec
+ Queue 0 Queue closed
+ Queue 1 Queue(13,19,3)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 28 sec
+ Queue 0 Queue(5,21,3)
+  Queue 1 Queue(13,19,2)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 29 sec
+ Queue 0 Queue(5,21,2)
+  Queue 1 Queue(13,19,1)
+  Queue 2 Queue(40,22,2)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 30 sec
+ Queue 0 Queue(5,21,1)
+  Queue 1 Queue closed
+ Queue 2 Queue(40,22,1)
+  Queue 3 Queue(25,22,5)
+  Queue 4 Queue closed
+
+Time: 31 sec
+ Queue 0 Queue closed
+ Queue 1 Queue(38,24,1)
+  Queue 2 Queue(40,22,1)
+  Queue 3 Queue(25,22,4)
+  Queue 4 Queue closed
+
+Time: 32 sec
+ Queue 0 Queue(37,24,6)
+  Queue 1 Queue closed
+ Queue 2 Queue closed
+ Queue 3 Queue(25,22,3)
+  Queue 4 Queue closed
+
+Time: 33 sec
+ Queue 0 Queue(37,24,5)
+  Queue 1 Queue(1,24,5)
+  Queue 2 Queue closed
+ Queue 3 Queue(25,22,2)
+  Queue 4 Queue closed
+
+Time: 34 sec
+ Queue 0 Queue(37,24,4)
+  Queue 1 Queue(1,24,4)
+  Queue 2 Queue(42,25,2)
+  Queue 3 Queue(25,22,1)
+  Queue 4 Queue closed
+
+Time: 35 sec
+ Queue 0 Queue(37,24,3)
+  Queue 1 Queue(1,24,4)
+  Queue 2 Queue(42,25,1)
+  Queue 3 Queue closed
+ Queue 4 Queue(26,25,2)
+ 
+Time: 36 sec
+ Queue 0 Queue(37,24,2)
+  Queue 1 Queue(1,24,2)
+  Queue 2 Queue closed
+ Queue 3 Queue(41,27,2)
+  Queue 4 Queue(26,25,1)
+ 
+Time: 37 sec
+ Queue 0 Queue(37,24,1)
+  Queue 1 Queue(1,24,1)
+  Queue 2 Queue(11,28,4)
+  Queue 3 Queue(41,27,1)
+  Queue 4 Queue closed
+
+Time: 38 sec
+ Queue 0 Queue closed
+ Queue 1 Queue closed
+ Queue 2 Queue(11,28,3)
+  Queue 3 Queue closed
+ Queue 4 Queue(28,28,5)
+ 
+Time: 39 sec
+ Queue 0 Queue(45,30,1)
+  Queue 1 Queue closed
+ Queue 2 Queue(11,28,3)
+  Queue 3 Queue closed
+ Queue 4 Queue(28,28,5)
+ 
+Time: 40 sec
+ Queue 0 Queue closed
+ Queue 1 Queue(19,30,2)
+  Queue 2 Queue(11,28,1)
+  Queue 3 Queue closed
+ Queue 4 Queue(28,28,3)
+ 
+Time: 41 sec
+ Queue 0 Queue(16,32,2)
+  Queue 1 Queue(19,30,1)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue(28,28,2)
+ 
+Time: 42 sec
+ Queue 0 Queue(16,32,1)
+  Queue 1 Queue closed
+ Queue 2 Queue(11,32,3)
+  Queue 3 Queue closed
+ Queue 4 Queue(28,28,1)
+ 
+Time: 43 sec
+ Queue 0 Queue closed
+ Queue 1 Queue(24,33,4)
+  Queue 2 Queue(11,32,2)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 44 sec
+ Queue 0 Queue(33,34,5)
+  Queue 1 Queue(24,33,3)
+  Queue 2 Queue(11,32,1)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 45 sec
+ Queue 0 Queue(33,34,4)
+  Queue 1 Queue(24,33,2)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 46 sec
+ Queue 0 Queue(33,34,3)
+  Queue 1 Queue(24,33,1)
+  Queue 2 Queue closed
+ Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 47 sec
+ Queue 0 Queue(33,34,2)
+  Queue 1 Queue closed
+ Queue 2 Queue(1,36,6)
+  Queue 3 Queue closed
+ Queue 4 Queue closed
+
+Time: 48 sec
+ Queue 0 Queue(33,34,1)
+  Queue 1 Queue(46,38,1)
+  Queue 2 Q
