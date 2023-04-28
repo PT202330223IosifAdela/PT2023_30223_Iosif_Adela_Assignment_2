@@ -15,13 +15,13 @@ import java.io.FileWriter;
 
 public class SimulationManager implements Runnable {
     public int timeLimit = 60;  //t max simulation: 60 60 200
-    public static int numberOfServers = 5; //nr de cozi: 2 5 20
-    public int numberOfClients = 50; //nr de clienti: 4 50 1000
+    public static int numberOfServers = 2; //nr de cozi: 2 5 20
+    public int numberOfClients = 4; //nr de clienti: 4 50 1000
     public int arrivMin = 2;    ///t min arrival:2 2 10
-    public int arrivMax = 40;   ///t max arrival: 30 40 100
+    public int arrivMax = 30;   ///t max arrival: 30 40 100
 
-    public int serviceMin = 1;  //t min service: 2 1 3
-    public int serviceMax = 7; //t max service: 4 7 9
+    public int serviceMin = 2;  //t min service: 2 1 3
+    public int serviceMax = 4; //t max service: 4 7 9
     private static Scheduler scheduler;
     private List<Task> generateTasks;
     private BlockingQueue<Task> coada;
