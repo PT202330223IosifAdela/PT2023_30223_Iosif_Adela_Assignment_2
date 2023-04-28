@@ -14,14 +14,14 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.io.FileWriter;
 
 public class SimulationManager implements Runnable {
-    public int timeLimit = 200;  //t max simulation: 60 60 200
-    public static int numberOfServers = 20; //nr de cozi: 2 5 20
-    public int numberOfClients = 1000; //nr de clienti: 4 50 1000
-    public int arrivMin = 10;    ///t min arrival:2 2 10
-    public int arrivMax = 100;   ///t max arrival: 30 40 100
+    public int timeLimit = 60;  //t max simulation: 60 60 200
+    public static int numberOfServers = 5; //nr de cozi: 2 5 20
+    public int numberOfClients = 50; //nr de clienti: 4 50 1000
+    public int arrivMin = 2;    ///t min arrival:2 2 10
+    public int arrivMax = 40;   ///t max arrival: 30 40 100
 
-    public int serviceMin = 3;  //t min service: 2 1 3
-    public int serviceMax = 9; //t max service: 4 7 9
+    public int serviceMin = 1;  //t min service: 2 1 3
+    public int serviceMax = 7; //t max service: 4 7 9
     private static Scheduler scheduler;
     private List<Task> generateTasks;
     private BlockingQueue<Task> coada;
