@@ -60,7 +60,7 @@ public class SimulationManager implements Runnable {
         }
     }
 
-    @Override
+    /*@Override
     public void run() {
         try {
             f = new FileWriter("logFile.txt");
@@ -104,7 +104,7 @@ public class SimulationManager implements Runnable {
                     scheduler.addTask(coada);
                     //scheduler.printCozi();
                     //f.write(scheduler.printCozi());
-                    Thread.sleep(1000);
+                   /// Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -129,13 +129,98 @@ public class SimulationManager implements Runnable {
             try {
                 // scheduler.printCozi();
                 f.write(scheduler.printCozi());
-                Thread.sleep(1000);
+                //Thread.sleep(1000);
                 currentTime = currentTime + 1;
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+        try {
+            f.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
+
+
+    @Override
+    public void run() {
+        try {
+            f = new FileWriter("logFile.txt");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            generateNRandomTasks();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        int currentTime = 0;
+        while (currentTime < timeLimit && !coada.isEmpty()) {
+            //afisare waiting clients
+
+            try {
+                f.write("\nTime: " + currentTime + " sec\n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            while (!coada.isEmpty() && coada.peek().getArrivalTime() <= currentTime) {
+                try {
+                    scheduler.addTask(coada);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            try {
+                f.write("\nWaiting clients: " + coada.toString());
+                f.write("\n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            try {
+                f.write(scheduler.printCozi());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            currentTime++;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                System.out.println("message");
+            }
+        }
+        while (currentTime < timeLimit && !scheduler.eGoala()) {
+            try {
+                f.write("\nTime: " + currentTime + " sec\n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            try {
+                f.write("\nWaiting clients: " + coada.toString());
+                f.write("\n");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            try {
+                f.write(scheduler.printCozi());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    System.out.println("message");
+                }
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            currentTime++;
         }
         try {
             f.close();
