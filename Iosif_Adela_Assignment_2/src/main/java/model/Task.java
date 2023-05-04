@@ -35,10 +35,10 @@ public class Task implements Comparable<Task> {
 
 
     @Override
-    public int compareTo(Task t) {//sortare clienti dupa waitingPeriod
-        //se ordoneaza dupa timpul de venire
-        //daca timpii sunt egali, se uita la timpii de servire
-        if (this.arrivalTime.equals(t.arrivalTime)) {
+    public int compareTo(Task t) { //sortare clienti dupa waitingPeriod
+        //se ordoneaza dupa arrival time
+
+        if (this.arrivalTime.equals(t.arrivalTime)) { //daca timpii sunt egali, se uita la timpii de servire
             Integer stime = serviceTime.get();
             Integer aux = t.serviceTime.get();
             return stime.compareTo(aux);
@@ -47,6 +47,7 @@ public class Task implements Comparable<Task> {
         }
     }
 
+    //afisare waiting clients
     @Override
     public String toString() {
         return "(" + id + "," + arrivalTime + "," + serviceTime + ")";

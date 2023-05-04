@@ -1,118 +1,114 @@
 
-Waiting clients: [(3,8,3), (1,16,4), (3,18,4), (4,27,2)]
+Time: 0 sec
+
+Waiting clients: [(1,2,3), (1,3,3), (3,4,4), (2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 1 sec
- Queue 0 Queue closed
- Queue 1 Queue closed
 
-Waiting clients: [(3,8,3), (1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(1,2,3), (1,3,3), (3,4,4), (2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 2 sec
- Queue 0 Queue closed
- Queue 1 Queue closed
 
-Waiting clients: [(3,8,3), (1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(1,3,3), (3,4,4), (2,16,3)]
+0 Queue(1,2,2)
+1 Queue closed
+
 Time: 3 sec
- Queue 0 Queue closed
- Queue 1 Queue closed
 
-Waiting clients: [(3,8,3), (1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(3,4,4), (2,16,3)]
+0 Queue(1,2,1)
+1 Queue(1,3,2)
+
 Time: 4 sec
- Queue 0 Queue closed
- Queue 1 Queue closed
 
-Waiting clients: [(3,8,3), (1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue(3,4,4)
+1 Queue(1,3,1)
+
 Time: 5 sec
- Queue 0 Queue closed
- Queue 1 Queue closed
 
-Waiting clients: [(3,8,3), (1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue(3,4,3)
+1 Queue closed
+
 Time: 6 sec
- Queue 0 Queue closed
- Queue 1 Queue closed
 
-Waiting clients: [(3,8,3), (1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue(3,4,2)
+1 Queue closed
+
 Time: 7 sec
- Queue 0 Queue closed
- Queue 1 Queue closed
 
-Waiting clients: [(3,8,3), (1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue(3,4,1)
+1 Queue closed
+
 Time: 8 sec
- Queue 0 Queue closed
- Queue 1 Queue closed
 
-Waiting clients: [(1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 9 sec
- Queue 0 Queue(3,8,1)  Queue 1 Queue closed
 
-Waiting clients: [(1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 10 sec
- Queue 0 Queue(3,8,1)  Queue 1 Queue closed
 
-Waiting clients: [(1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 11 sec
- Queue 0 Queue(3,8,1)  Queue 1 Queue closed
 
-Waiting clients: [(1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 12 sec
- Queue 0 Queue(3,8,1)  Queue 1 Queue closed
 
-Waiting clients: [(1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 13 sec
- Queue 0 Queue(3,8,1)  Queue 1 Queue closed
 
-Waiting clients: [(1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 14 sec
- Queue 0 Queue(3,8,1)  Queue 1 Queue closed
 
-Waiting clients: [(1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 15 sec
- Queue 0 Queue(3,8,1)  Queue 1 Queue closed
 
-Waiting clients: [(1,16,4), (3,18,4), (4,27,2)]
+Waiting clients: [(2,16,3)]
+0 Queue closed
+1 Queue closed
+
 Time: 16 sec
- Queue 0 Queue(3,8,1)  Queue 1 Queue closed
 
-Waiting clients: [(3,18,4), (4,27,2)]
+Waiting clients: []
+0 Queue(2,16,2)
+1 Queue closed
+
 Time: 17 sec
- Queue 0 Queue closed
- Queue 1 Queue(1,16,3) 
-Waiting clients: [(3,18,4), (4,27,2)]
+
+Waiting clients: []
+0 Queue(2,16,1)
+1 Queue closed
+
 Time: 18 sec
- Queue 0 Queue closed
- Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 19 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 20 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 21 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 22 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 23 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 24 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 25 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 26 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
-Waiting clients: [(4,27,2)]
-Time: 27 sec
- Queue 0 Queue(3,18,3)  Queue 1 Queue(1,16,2) 
+
 Waiting clients: []
-Time: 27 sec
- Queue 0 Queue(3,18,2)  Queue 1 Queue(1,16,1) (4,27,2) 
-Waiting clients: []
-Time: 28 sec
- Queue 0 Queue(3,18,1)  Queue 1 Queue(4,27,2) 
-Waiting clients: []
-Time: 29 sec
- Queue 0 Queue closed
- Queue 1 Queue(4,27,1) 
+0 Queue closed
+1 Queue closed

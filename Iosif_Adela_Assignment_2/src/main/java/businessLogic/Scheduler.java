@@ -29,9 +29,7 @@ public class Scheduler {
     public String printCozi() {
         String st = "";
         for (Server s : servers) {
-            //st += " Queue " + servers.indexOf(s) + " " + s;
             st += servers.indexOf(s) + " " + s;
-            //  System.out.println("Queue " + servers.indexOf(s) + " " + s);
         }
         return st;
     }
